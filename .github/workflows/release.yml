@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         run: go test -p 1 -cover -race -v ./...
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ test ]
     steps:
       - name: Checkout
